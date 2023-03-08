@@ -1,67 +1,204 @@
-# Ruby Course
+<a name="readme-top"></a>
 
-If you are not familiar with linters and GitHub Actions, read [root level README](../README.md).
+<div align="center">
 
-## Set-up Rubocop GitHub Action
+  <h3><b>OOP School Library</b></h3>
 
-[Rubocop](https://www.rubocop.org/) is a Ruby static code analyzer (a.k.a. linter) and code formatter. It will enforce many of the guidelines outlined in the community [Ruby Style Guide](https://rubystyle.guide/).
+</div>
 
-This GitHub Action is going to run [Rubocop](https://docs.rubocop.org/en/stable/) to help you find style issues.
+<!-- TABLE OF CONTENTS -->
 
-Please do the following **steps in this order**:
+# 📗 Table of Contents
 
-1. In the first commit of your feature branch create a `.github/workflows` folder and add a copy of [`.github/workflows/linters.yml`](.github/workflows/linters.yml) to that folder.
-    - **Remember** to use the file linked above
-    - **Remember** that `.github` folder starts with a dot.
-2. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-3. When you open your first pull request you should see the result of the GitHub Actions:
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [❓ FAQ (OPTIONAL)](#faq)
+- [📝 License](#license)
 
-![gh actions checks](../assets/images/gh-actions-rubocop-linters-checks.png)
+<!-- PROJECT DESCRIPTION -->
 
-Click on the `Details` link to see the full output and the errors that need to be fixed:
+# 📖 OOP School Library <a name="about-project"></a>
 
-![gh actions failing checks](../assets/images/gh-actions-rubocop-failing-checks.png)
+> About this repository
 
-## [OPTIONAL]Set-up RSpec GitHub Action
+**OOP School Library** is a console app used to demostrate the use of Object Orientated Programming Paradigm in ruby, we create a library where we can record what books are in the library and who borrows them
 
-You can run your tests with GitHub Actions to ensure that they are passing before merging a PR.
+## 🛠 Built With <a name="built-with"></a>
 
-To use the GitHub Action to run your tests, please do the following **steps in this order**:
+### Tech Stack <a name="tech-stack"></a>
 
-1. Add a copy of [`.github/workflows/tests.yml`](.github/workflows/tests.yml) to your `.github/workflows` folder.
-    - **Remember** to use the file linked above
-    - Do not modify or delete the [`.github/workflows/linters.yml`](.github/workflows/linters.yml) file that should already be in that folder.
-    - RSpec by default will try to run any file ending in `_spec.rb` inside the `spec` folder. Make sure to follow this convention for your tests files so `rspec` can run your spec files.
-    - You can modify the [`.github/workflows/tests.yml`](.github/workflows/tests.yml) file to better fit your custom needs.
-3. When you open your pull request you should see the result of the GitHub Action:
+> My stack is consists only of the client side framework
 
-![gh actions checks](../assets/images/gh-actions-rspec-tests-checks.png)
+<details>
+  <summary>Backend</summary>
+  <ul>
+    <li><a href="https://ruby-lang.org/">Vanilla Ruby</a></li>
+  </ul>
+</details>
 
-Click on the `Details` link of the test action to check the results of your tests.
+### Key Features <a name="key-features"></a>
 
-## Set-up linters in your local env
+> Describe between 1-3 key features of the application.
 
-### [RuboCop](https://docs.rubocop.org/en/stable/)
+- **[Create Teacher and Student Objects which inherits from Person object]**
+- **[Borrow book from the library]**
+- **[Add/remove book from library]**
 
-1. Add this line to the `Gemfile`
-    ```
-    gem 'rubocop', '>= 1.0', '< 2.0'
-    ```
-    *not sure how to use Gemfile? Read [this](https://bundler.io/v1.15/guides/bundler_setup.html).*
-2. Run `bundle install`.
-3. Copy [.rubocop.yml](./.rubocop.yml) to the root directory of your project
-4. **Do not make any changes in config files - they represent style guidelines that you share with your team - which is a group of all Microverse students.**
-    - If you think that change is necessary - open a [Pull Request in this repository](../README.md#contributing) and let your code reviewer know about it.
-5. Run `rubocop`.
-6. Fix linter errors.
-7. **IMPORTANT NOTE**: feel free to research [auto-correct options for Rubocop](https://rubocop.readthedocs.io/en/latest/auto_correct/) if you get a flood of errors but keep in mind that correcting style errors manually will help you to make a habit of writing a clean code!
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Troubleshooting
 
-- While using Colorize gem, if you are facing errors with Rspec related to 
-    ```bash
-    LoadError:
-    cannot load such file -- colorize
-    ```
-    please remove ```--deployment``` from line no. [26](https://github.com/shubham14p3/Ruby-capstone-project/blob/ca86784cc88bea7c933e329c0953f07e21bcf6ca/.github/workflows/tests.yml#L16) of test.yml file.
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+> How to clone and use this project project.
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+- VSCode or any other equivalent code editor
+
+- Ruby and IRB
+
+### Linux
+```sh
+  sudo apt install ruby
+```
+### windows 
+
+[Download Ruby and IRB](https://ruby-lang.org/)
+
+### Setup
+
+Clone this repository to your desired folder:
+
+- Open the command prompt in the created directory.
+
+- On the terminal run this command 
+```sh
+git clone https://github.com/tsohleDev/OOP-School-Library.git
+```
+
+- Go to the repository folder using command prompt
+```sh
+ cd OOP-School-Library
+```
+
+### Install
+
+Install this project with:
+
+```sh
+ bundle install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  irb 
+```
+
+<!-- ### Run tests
+
+To run tests, run the following command:
+
+
+```sh
+  npm test
+```
+- -->
+
+<!-- ### Deployment
+
+You can deploy this project using:
+
+- To start run 
+```sh
+  npm run build
+``` -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+> All of the collaborators of this project.
+
+👤 **Tsohle Mokhemisi**
+
+- GitHub: [@githubhandle](https://github.com/tsohleDev2)
+- Twitter: [@twitterhandle](https://twitter.com/RealTsohle)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tsohle-mokhemisi-3687401b2/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> Describe 1 - 3 features you will add to the project.
+
+- **[Create a console app to interact with the app]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+> To support this project
+
+Give a ⭐️ if you like this project!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> Credits to everyone who inspired the codebase.
+
+I would like to thank [Microverse](https://microverse.org) for the great content
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

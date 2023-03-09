@@ -1,4 +1,7 @@
-class Person
+require_relative 'nameable'
+
+class Person < Nameable
+  # constructor method
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Math.random(1..1000)
     @name = name
@@ -20,5 +23,9 @@ class Person
 
   def can_use_services?
     @parent_permission || is_of_age?
+  end
+
+  def correct_name
+    @name
   end
 end

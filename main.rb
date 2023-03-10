@@ -118,7 +118,7 @@ class App
 
     person_index = gets.chomp.to_i
 
-    print 'Date: '
+    print 'Date(DD/MM/YYYY): '
     date = gets.chomp
 
     rental = Rental.new(date, @people[person_index], @books[book_index])
@@ -133,6 +133,11 @@ class App
     id = gets.chomp.to_i
 
     rentals = @rentals.filter { |rental| rental.person.id == id }
+    if rentals.empty?
+      puts 'No rentals found for that ID'
+      return main
+    end
+
     puts 'Rentals:'
     rentals.each do |rental|
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"

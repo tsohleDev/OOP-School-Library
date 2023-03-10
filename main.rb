@@ -66,7 +66,7 @@ class App
     parent_permission = gets.chomp
     parent_permission = parent_permission.downcase == 'y'
 
-    student = Student.new(age, name, permission?: parent_permission)
+    student = Student.new(age, name, parent_permission: parent_permission)
     @people.push(student)
   end
 
